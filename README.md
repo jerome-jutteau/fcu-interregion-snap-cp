@@ -18,7 +18,7 @@ pip install -r requirements.txt
 Usage
 ******
 ```shell
-copysnapshot --ak-dst <AK region dest> --sk-dst <SK region dest> --region-dst <region dest name> --ak-src <AK region src> --sk-src <SK region src> --region-src <region src name> --my-ip <public ip of computer running script> --snap-id <source snapshot id> [--disk <number of disks used>] [--no-compress ]
+./copysnapshot --ak-dst <AK region dest> --sk-dst <SK region dest> --region-dst <region dest name> --ak-src <AK region src> --sk-src <SK region src> --region-src <region src name> --my-ip <public ip of computer running script> --snap-id <source snapshot id> [--disk <number of disks used>] [--no-compress ]
 ```
 
 This script create a instance in source and destination regions. On source region it create N volumes from snapshot source,
@@ -33,7 +33,7 @@ Compression and number of disks used define the size of the instance source and 
 After data transfert, allocated objects are destroyed (instances,volumes,keys pairs, security groups), in case of error, 
 the script try to destroy allocated objets, but you must check that all objects are destroyed. 
 
-All allocated objects are taged/named in the form : temp_<reg>_<object>_<id_snap_src> where reg is "src" or "dst" ; objet is the object type
+All allocated objects are tagged/named in the form : temp_<reg>_<object>_<id_snap_src> where reg is "src" or "dst" ; objet is the object type
 (vm,vol,key,sg) and id_snap_src the id of source snapshot
 
 Actually the script contain 2 regions definitions, you can edit the script to add or modify region. 
